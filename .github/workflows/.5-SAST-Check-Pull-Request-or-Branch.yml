@@ -15,6 +15,19 @@ jobs:
     steps:
     - uses: actions/checkout@v5
 
+# Set up NuGet to install NuGet dependencies
+    - name: Setup NuGet
+      uses: NuGet/setup-nuget@v1.0.2
+      
+# Restore dependencies to the project
+    - name: Install dependencies
+      run: dotnet restore
+      
+# NuGet call to restore packages
+    - name: Restore Packages
+      run: nuget restore Verademo-dotnet.sln
+
+# Setup msbuild
     - name: Setup msbuild
       uses: microsoft/setup-msbuild@v1.1.3
 
