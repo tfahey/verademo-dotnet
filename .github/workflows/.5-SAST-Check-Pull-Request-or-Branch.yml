@@ -17,7 +17,7 @@ jobs:
 
 # Set up NuGet to install NuGet dependencies
     - name: Setup NuGet
-      uses: NuGet/setup-nuget@v1.0.2
+      uses: NuGet/setup-nuget@v2
       
 # Restore dependencies to the project
     - name: Install dependencies
